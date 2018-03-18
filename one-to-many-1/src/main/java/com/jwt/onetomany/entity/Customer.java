@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -19,7 +20,8 @@ public class Customer {
 	private long id;
 	private String name;
 	
-	@OneToMany(mappedBy = "customer" , cascade= CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "customer_id")
 	private Set<PhoneNumber> phoneNumbers;
 
 	public long getId() {
@@ -46,7 +48,7 @@ public class Customer {
 		this.phoneNumbers = phoneNumbers;
 	}
 	
-	public void addPhoneNumber(PhoneNumber number) {
+	/*public void addPhoneNumber(PhoneNumber number) {
 		if(number != null) {
 			if(phoneNumbers ==  null) {
 				phoneNumbers = new HashSet<>();
@@ -54,7 +56,7 @@ public class Customer {
 			number.setCustomer(this);
 			phoneNumbers.add(number);
 		}
-	}
+	}*/
 	
 
 }
