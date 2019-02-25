@@ -1,0 +1,17 @@
+server:
+  port: ${USER_DETAILS_SERVICE_PORT:8301}
+
+app: 
+   title: User Details Service API
+   description: This service will get user details from Database
+   version: '@project.version@'
+   creatorteam: javawebtutor Team 
+   creatoremail: admin@javawebtutor.com
+   termsofserviceurl: http://swagger.io/terms/
+   contactname: mukesh@javawebtutor.com 
+   license: Apache 2.0
+   licenseurl: http://www.apache.org/licenses/LICENSE-2.0.html
+   
+restClientModel:
+  ancillariesInFactURI: ${ANCILLARIES_INFO_URI:http://alb-c2c-dev-211709347.us-west-2.elb.amazonaws.com/api/ancillaries}
+  ancillariesInFactPath: ${ANCILLARIES_INFO_PATH:/loyaltyandrewardinfo}

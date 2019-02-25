@@ -1,0 +1,1 @@
+insert into user values(10001L,'Mukesh','abc',1000I);
